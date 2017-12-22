@@ -1,6 +1,6 @@
-{% set version = "0.9.35" %}
+{% set version = "0.9.36" %}
 {% set name = "easydev" %}
-{% set sha256 = "8663a7012c34b6be9f9ceb2c39cee7725b6516a95db41083ae34cad8a756950a" %}
+{% set sha256 = "fac718174a85714ba4592b2661865d45c0b6ebb84787c97857029f9863dd833e" %}
 
 package:
   name: {{ name }}
@@ -30,6 +30,7 @@ requirements:
     - setuptools
     - colorama
     - pexpect
+    - colorlog
 
 test:
   imports:
