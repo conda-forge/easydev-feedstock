@@ -1,6 +1,6 @@
-{% set version = "0.9.36" %}
+{% set version = "0.9.38" %}
 {% set name = "easydev" %}
-{% set sha256 = "fac718174a85714ba4592b2661865d45c0b6ebb84787c97857029f9863dd833e" %}
+{% set sha256 = "1e44e834a6bcdedcb468e28e34f7c0d08e96c572649f453a802c9c36b0108c6c" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - easydev_buildPackage=easydev.package:buildPackage
