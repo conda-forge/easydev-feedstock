@@ -5,11 +5,13 @@ Home: http://packages.python.org/easydev/
 
 Package license: BSD 3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/easydev-feedstock/blob/master/LICENSE.txt)
 
 Summary: Common utilities to ease the development of Python packages
 
+Development: https://github.com/cokelaer/easydev
 
+Documentation: http://easydev-python.readthedocs.io/en/latest/
 
 Current build status
 ====================
