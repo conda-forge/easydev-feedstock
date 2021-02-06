@@ -1,6 +1,6 @@
-{% set version = "0.10.1" %}
+{% set version = "0.11.0" %}
 {% set name = "easydev" %}
-{% set sha256 = "faa791f0b1ef87bddab4d873c5a2c2be539b8a03c177242b1b402412a0dd69d1" %}
+{% set sha256 = "8402a49e2e9e55b220e52516f92244b5bc3dd438230b183d0c9c0b8b85867a1c" %}
 
 package:
   name: {{ name }}
