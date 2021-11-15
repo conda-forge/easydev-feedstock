@@ -1,6 +1,6 @@
-{% set version = "0.11.0" %}
+{% set version = "0.12.0" %}
 {% set name = "easydev" %}
-{% set sha256 = "8402a49e2e9e55b220e52516f92244b5bc3dd438230b183d0c9c0b8b85867a1c" %}
+{% set sha256 = "8f4a340c5ffe193654c387d271bcd466d1fe56bf9850f2704122d3b52b1e6090d" %}
 
 package:
   name: {{ name }}
@@ -16,19 +16,18 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
-    - easydev_buildPackage=easydev.package:buildPackage
-    - multigit=easydev.multigit:main_func
     - browse=easydev.browser:main
-    - ibrowse=easydev.browser:main
 
 requirements:
   host:
     - pip
     - python
+    - python >=3.7
     - setuptools
 
   run:
     - python
+    - python >=3.7
     - setuptools
     - colorama
     - pexpect
@@ -37,11 +36,10 @@ requirements:
 test:
   imports:
     - easydev
-    - easydev.progressbar
 
 about:
   home: http://packages.python.org/easydev/
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: COPYING
   summary: Common utilities to ease the development of Python packages
