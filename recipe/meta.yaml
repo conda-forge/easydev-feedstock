@@ -26,6 +26,7 @@ requirements:
     - colorama
     - pexpect
     - colorlog
+    - setuptools
 
 test:
   imports:
