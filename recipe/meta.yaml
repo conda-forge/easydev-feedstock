@@ -1,34 +1,28 @@
-{% set version = "0.12.0" %}
 {% set name = "easydev" %}
-{% set sha256 = "f4a340c5ffe193654c387d271bcd466d1fe56bf9850f2704122d3b52b1e6090d" %}
+{% set version = "0.12.1" %}
+{% set sha256 = "b47b7e6f75316ac9045b46487930e16ddb567f3899310deee11d72d8e1f0a231" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/easydev-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation
   entry_points:
     - browse=easydev.browser:main
 
 requirements:
   host:
+    - python >=3.7
     - pip
-    - python
-    - python >=3.7
-    - setuptools
-
   run:
-    - python
     - python >=3.7
-    - setuptools
     - colorama
     - pexpect
     - colorlog
@@ -36,14 +30,16 @@ requirements:
 test:
   imports:
     - easydev
+  commands:
+    - browse --help
 
 about:
-  home: http://packages.python.org/easydev/
+  home: https://packages.python.org/easydev/
+  summary: Common utilities to ease the development of Python packages
+  doc_url: https://easydev-python.readthedocs.io/en/latest/
   license: BSD-3-Clause
   license_family: BSD
   license_file: COPYING
-  summary: Common utilities to ease the development of Python packages
-  doc_url: http://easydev-python.readthedocs.io/en/latest/
   dev_url: https://github.com/cokelaer/easydev
 
 extra:
