@@ -1,6 +1,6 @@
-{% set version = "0.12.0" %}
+{% set version = "0.13.2" %}
 {% set name = "easydev" %}
-{% set sha256 = "f4a340c5ffe193654c387d271bcd466d1fe56bf9850f2704122d3b52b1e6090d" %}
+{% set sha256 = "a5c054dbf14e923927874fec304de9d988e19c4174cd10bd671ab7a21004098c" %}
 
 package:
   name: {{ name }}
@@ -14,37 +14,35 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --no-cache-dir -vvv
   entry_points:
     - browse=easydev.browser:main
 
 requirements:
   host:
+    - python >=3.8
     - pip
-    - python
-    - python >=3.7
-    - setuptools
-
+    - poetry-core
   run:
-    - python
-    - python >=3.7
-    - setuptools
+    - python >=3.8
     - colorama
     - pexpect
     - colorlog
+    - platformdirs >=4.2.0
+    - line_profiler >=4.1.2
 
 test:
   imports:
     - easydev
 
 about:
-  home: http://packages.python.org/easydev/
-  license: BSD-3-Clause
+  home: "https://github.com/cokelaer/easydev"
+  license: "BSD-3-Clause"
   license_family: BSD
   license_file: COPYING
-  summary: Common utilities to ease the development of Python packages
-  doc_url: http://easydev-python.readthedocs.io/en/latest/
-  dev_url: https://github.com/cokelaer/easydev
+  summary: "Common utilities to ease the development of Python packages."
+  doc_url: "https://easydev-python.readthedocs.io/en/latest"
+  dev_url: "https://github.com/cokelaer/easydev"
 
 extra:
   recipe-maintainers:
