@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.13.0
+  version: 0.13.3
   name: easydev
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 1ba035f4f7e713cd26c0a7caaf14dae833e81135a57252d46f204cb60c4b8ca9
+  sha256: 111644afca6785d406e7819ebce56b928d7fd9be15156d6f38f8274b3ccbe249
 
 build:
   number: 0
@@ -26,14 +26,15 @@ requirements:
     - python >=${{ python_min }}
     - colorama >=0.4.6,<0.5.0
     - colorlog >=6.8.2,<7.0.0
-    - line_profiler >=4.1.2,<5.0.0
     - pexpect >=4.9.0,<5.0.0
     - platformdirs >=4.2.0,<5.0.0
+    - line_profiler >=4.1.2,<5.0.0
 
 tests:
   - python:
       imports:
         - easydev
+        - easydev.share
       pip_check: true
       python_version: ${{ python_min }}.*
 
