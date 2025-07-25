@@ -148,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@cokelaer](https://github.com/cokelaer/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 
