@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.14.0"
+  version: "0.15.0"
   name: easydev
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: da3c82b89debe71c13d946a6514a85bdc3034fa878aeaf9d361721f07ac42f44 
+  sha256: 40eed6bfa254bab47fdead8a444733f1aeac4dc158fc0670532a63d821045b79
 
 build:
   number: 0
